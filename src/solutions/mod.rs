@@ -1,14 +1,10 @@
 mod day_01;
+mod day_02;
 
 use crate::solver::Solver;
 
 pub fn solve_day(day: u32) {
-    let filename = format!("inputs/day{:02}.txt", day);
-
-    let solution = match day {
-        1 => day_01::Solution {},
-        _ => panic!("No solution found for that day!"),
-    };
+    let fp = String::from(format!("inputs/day{:02}.txt", day));
 
     println!("*=============================*");
     println!("|     Advent of Code 2020     |");
@@ -16,5 +12,9 @@ pub fn solve_day(day: u32) {
     println!();
     println!("Solutions for day {}:\n", day);
 
-    solution.solve(String::from(filename));
+    match day {
+        1 => day_01::Solution {}.solve(fp),
+        2 => day_02::Solution {}.solve(fp),
+        _ => panic!("No solution found for that day!"),
+    };
 }
