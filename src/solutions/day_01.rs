@@ -49,18 +49,22 @@ impl Solver for Solution {
 mod tests {
     use super::*;
 
+    fn input() -> Vec<u32> {
+        vec![1721, 979, 366, 299, 675, 1456]
+    }
+
     #[test]
     fn test_first() {
-        let input = [1721, 979, 366, 299, 675, 1456];
-        let result = Solution {}.solve_first(&Vec::from(input));
+        let input = input();
+        let result = Solution {}.solve_first(&input);
 
         assert!(result == 514579);
     }
 
     #[test]
     fn test_second() {
-        let input = [1721, 979, 366, 299, 675, 1456];
-        let result = Solution {}.solve_second(&Vec::from(input));
+        let input = input();
+        let result = Solution {}.solve_second(&input);
 
         assert!(result == 241861950);
     }

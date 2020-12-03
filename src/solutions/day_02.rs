@@ -76,13 +76,16 @@ fn parse_entry(line: &String) -> (Policy, &str) {
 mod tests {
     use super::*;
 
+    fn input() -> Vec<String> {
+        ["1-3 a: abcde", "1-3 b: cdefg", "2-9 c: ccccccccc"]
+            .iter()
+            .map(|s| s.to_string())
+            .collect()
+    }
+
     #[test]
     fn test_first() {
-        let input = ["1-3 a: abcde", "1-3 b: cdefg", "2-9 c: ccccccccc"]
-            .iter()
-            .map(|s| String::from(*s))
-            .collect();
-
+        let input = input();
         let result = Solution {}.solve_first(&input);
 
         assert!(result == 2);
@@ -90,11 +93,7 @@ mod tests {
 
     #[test]
     fn test_second() {
-        let input = ["1-3 a: abcde", "1-3 b: cdefg", "2-9 c: ccccccccc"]
-            .iter()
-            .map(|s| String::from(*s))
-            .collect();
-
+        let input = input();
         let result = Solution {}.solve_second(&input);
 
         assert!(result == 1);
