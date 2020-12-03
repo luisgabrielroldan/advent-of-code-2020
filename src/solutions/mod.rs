@@ -1,5 +1,6 @@
 mod day_01;
 mod day_02;
+mod day_03;
 
 use crate::solver::Solver;
 
@@ -15,6 +16,7 @@ pub fn solve_day(day: u32) {
     match day {
         1 => day_01::Solution {}.solve(fp),
         2 => day_02::Solution {}.solve(fp),
+        3 => day_03::Solution {}.solve(fp),
         _ => panic!("No solution found for that day!"),
     };
 }
